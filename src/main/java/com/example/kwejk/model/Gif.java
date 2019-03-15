@@ -4,13 +4,13 @@ public class Gif {
 
     String name;
     String username;
-    Boolean favourite;
+    Boolean favorite;
     int categoryId;
 
-    public Gif(String name, String username, Boolean favourite, int categoryId) {
+    public Gif(String name, String username, Boolean favorite, int categoryId) {
         this.name = name;
         this.username = username;
-        this.favourite = favourite;
+        this.favorite = favorite;
         this.categoryId = categoryId;
     }
 
@@ -30,12 +30,12 @@ public class Gif {
         this.username = username;
     }
 
-    public Boolean getFavourite() {
-        return favourite;
+    public Boolean getFavorite() {
+        return favorite;
     }
 
-    public void setFavourite(Boolean favourite) {
-        this.favourite = favourite;
+    public void setFavorite(Boolean favourite) {
+        this.favorite = favourite;
     }
 
     public int getCategoryId() {
