@@ -11,7 +11,7 @@ import java.util.List;
 public class GifRepository {
 
     public final static List<Gif> ALL_GIFS = Arrays.asList(
-            
+
             new Gif("android-explosion", "mols", true, 1),
             new Gif("ben-and-mike", "mika", false, 2),
             new Gif("book-dominos", "nen", true, 1),
@@ -19,8 +19,20 @@ public class GifRepository {
             new Gif("cowboy-coder", "username", true, 1),
             new Gif("infinite-andrew", "username", true, 1)
     );
+
     public static List<Gif> getAllGifs() {
         return ALL_GIFS;
 
     }
+
+    public static List<Gif> getFavoritesGifs() {
+        List<Gif> favoritesGifs = new ArrayList<>();
+        for (Gif value : ALL_GIFS) {
+            if (value.getFavourite() == true) {
+                favoritesGifs.add(value);
+            }
+        }
+        return favoritesGifs;
+    }
 }
+
