@@ -6,6 +6,7 @@ import com.example.kwejk.model.Gif;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,14 +18,14 @@ public class SearchController {
     @Autowired
     GifRepository gifRepository;
 
-    @PostMapping("/search")
-    public String search(@RequestParam String q, ModelMap modelMap
-    ) {
-        List<Gif> search = gifRepository.searchGifsByName(q);
-        modelMap.put("search", q);
+    @GetMapping("/search")
+    public String search(@RequestParam String name, ModelMap modelMap) {
+        List<Gif> result = gifRepository.searchGifsByName(name);
+        modelMap.put("gifs", result);
         return "home";
 
     }
 
 }
+
 //<input name="q" type="search" placeholder="Wyszukiwanie..." required="required" autocomplete="off"/>

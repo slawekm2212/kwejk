@@ -23,16 +23,17 @@ public class CategoryController {
     // @requestmapping przekierowuje request z
     // przegladarki do konkretnej metody
     @RequestMapping("/categories")
-    public String gifCategories(ModelMap modelMap){
+    public String gifCategories(ModelMap modelMap) {
         List<Category> categories = categoryRepository.getCatergoryList();
-        modelMap.put("categories",categories);
+        modelMap.put("categories", categories);
         return "categories";
     }
+
     @RequestMapping("/category/{id}")
     public String getCategoryId(
-                    @PathVariable int id, ModelMap modelMap){
+            @PathVariable int id, ModelMap modelMap) {
         List<Gif> gifs = gifRepository.findGifByCategoryId(id);
-        modelMap.put("gifs",gifs);
+        modelMap.put("gifs", gifs);
         modelMap.put("category", categoryRepository.getCategoryById(id));
         return "category";
     }

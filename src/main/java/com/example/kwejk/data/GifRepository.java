@@ -46,15 +46,15 @@ public class GifRepository {
         return gifsByCategory;
     }
 
-    public static List<Gif> searchGifsByName(String name) {
+    public List<Gif> searchGifsByName(String name) {
         List<Gif> gifsByName = new ArrayList<>();
-        for (Gif byName : ALL_GIFS
-        ) {
-            if (ALL_GIFS.contains(name)) {
-                gifsByName.add(byName);
+        for (Gif gif : ALL_GIFS) {
+            if (gif.getName().contains(name)) {
+                gifsByName.add(gif);
             }
         }
         return gifsByName;
     }
 }
+
 
